@@ -1,0 +1,11 @@
+name: "LoRaWAN Add-on"
+description: "A complete LoRaWAN Network Server with Chirpstack"
+version: "0.0.1"
+slug: "lorawan"
+init: false
+arch:
+  - aarch64
+  - amd64
+  - armhf
+  - armv7
+  - i386
