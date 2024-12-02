@@ -1,5 +1,8 @@
-ARG BUILD_FROM
-FROM $BUILD_FROM
+FROM ghcr.io/home-assistant/amd64-base-debian:bullseye
+# FROM debian:bullseye
+# FROM ubuntu:22.04
+
+# ARG DEBIAN_FRONTEND=noninteractive
 
 # Install supporting services
 RUN apt-get update && apt-get install -y \
