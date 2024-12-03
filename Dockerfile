@@ -10,7 +10,8 @@ RUN apt-get update && apt-get install -y \
     postgresql \
     python3 \
     procps \
-    vim
+    vim \
+    iproute2
     
 # Postgres Files
 COPY pg_hba.conf /etc/postgresql/13/main
@@ -46,8 +47,8 @@ COPY run.sh /
 RUN chmod a+x /run.sh
 
 # Expose Chirpstack Ports
-EXPOSE 8080
-EXPOSE 1700
+# EXPOSE 8080
+# EXPOSE 1700
 
 # Run run.sh
 CMD ["bash", "./run.sh"]

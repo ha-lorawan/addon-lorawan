@@ -12,3 +12,4 @@ arch:
 startup: services
 ports:
   8080/tcp: 8080
+  8000/tcp: 8000
