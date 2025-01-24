@@ -9,3 +9,9 @@ arch:
   - armhf
   - armv7
   - i386
+startup: services
+ports:
+  8080/tcp: 8080
+devices: 
+  - /dev/ttyACM0
+udev: true

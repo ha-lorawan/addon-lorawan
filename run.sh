@@ -1,17 +1,25 @@
-#!/usr/bin/with-contenv bashio
+# LoRaWAN Addon Startup Script
 
+# Set User Limits on File Descriptor Values
+# start-stop-daemon wasn't working with --background without this
+ulimit -n 65536
+
+# start postgresql
 service postgresql start
 psql -U postgres -f pg_setup.sql
 
-# chown -R mosquitto /var/run/mosquitto
-service mosquitto start
+# start redis
 service redis-server start
+
+# service mosquitto start
+/usr/sbin/mosquitto -d
+sleep 5
 
 # start chirpstack-gateway-bridge
 service chirpstack-gateway-bridge start
+
 # start chirpstack
 service chirpstack start
 
-service --status-all
-
-python3 -m http.server 8000
+# start lora_pkt_fwd
+service lora-pkt-fwd start
