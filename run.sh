@@ -23,3 +23,8 @@ service chirpstack start
 
 # start lora_pkt_fwd
 service lora-pkt-fwd start
+
+# keep the container running
+while true; do
+    sleep 1
+done
