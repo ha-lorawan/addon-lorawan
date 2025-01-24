@@ -1,0 +1,2 @@
+# make all files in the repository use LF line endings# Autodetect text files
+* text=auto eol=lf
