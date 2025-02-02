@@ -24,6 +24,10 @@ service chirpstack start
 # start lora_pkt_fwd
 service lora-pkt-fwd start
 
+# run chripstack api script
+sleep 5
+/create-chirpstack-api-key.sh
+
 # keep the container running
 while true; do
     sleep 1

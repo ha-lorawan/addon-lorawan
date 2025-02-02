@@ -40,6 +40,10 @@ RUN chown -R chirpstack:chirpstack /var/log/chirpstack
 COPY chirpstack /etc/init.d/chirpstack
 RUN chmod +x /etc/init.d/chirpstack
 
+# Copy Chirpstack API Key Script
+COPY create-chirpstack-api-key.sh /
+RUN chmod +x /create-chirpstack-api-key.sh
+
 RUN mkdir /etc/lora
 COPY sx1302_hal /etc/lora/sx1302_hal
 # RUN chmod +x /etc/lora/sx1302_hal/packet_forwarder/lora_pkt_fwd
