@@ -9,8 +9,6 @@
 # Description:       Manages the LoRa Packet Forwarder server daemon
 ### END INIT INFO
 
-echo "Hello World"
-
 # Configuration
 NAME="lora-pkt-fwd"
 DAEMON="/etc/lora/sx1302_hal/packet_forwarder/lora_pkt_fwd"
@@ -27,9 +25,9 @@ start() {
     fi
 
     echo "Starting $NAME..."
-    start-stop-daemon --start --quiet --background \
+    start-stop-daemon --start \
         --pidfile "$PIDFILE" --make-pidfile \
-        --exec "$DAEMON" -- $DAEMON_OPTS >> "$LOGFILE" 2>&1
+        --exec "$DAEMON" -- $DAEMON_OPTS >> "$LOGFILE" 2>&1 &
 
     if [ $? -eq 0 ]; then
         echo "$NAME started."
@@ -41,7 +39,7 @@ start() {
 stop() {
     if [ -f "$PIDFILE" ] && kill -0 $(cat "$PIDFILE") 2>/dev/null; then
         echo "Stopping $NAME..."
-        start-stop-daemon --stop --quiet --pidfile "$PIDFILE"
+        start-stop-daemon --stop --pidfile "$PIDFILE"
         rm -f "$PIDFILE"
         echo "$NAME stopped."
     else
