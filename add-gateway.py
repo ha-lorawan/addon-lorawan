@@ -44,7 +44,7 @@ if __name__ == "__main__":
   req.gateway.gateway_id = gateway_id
   req.gateway.tenant_id = tenant_id
   req.gateway.name = "RAK Gateway"
-  req.gateway.description = "RAK7371 - WisGate Developer LoRaWAN Gateway"
+  req.gateway.description = "RAK7271 / RAK7371 - WisGate Developer LoRaWAN Gateway"
   # req.gateway.location.latitude = 37.944773
   # req.gateway.location.longitude = -122.052319
   # req.gateway.location.altitude = 1
