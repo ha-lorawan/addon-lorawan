@@ -28,6 +28,9 @@ service lora-pkt-fwd start
 sleep 5
 /create-chirpstack-api-key.sh
 
+# add gateway to chirpstack
+python3 add-gateway.py
+
 # keep the container running
 while true; do
     sleep 1

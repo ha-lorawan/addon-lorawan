@@ -26,6 +26,10 @@ RUN apt-get update
 
 RUN apt-get install -y gcc make
 
+# Python packages
+RUN apt-get install -y python3-pip
+RUN pip3 install chirpstack-api grpcio json5
+
 # Install Chirpstack Gateway Bridge
 RUN apt-get install -y chirpstack-gateway-bridge
 COPY chirpstack-gateway-bridge.toml /etc/chirpstack-gateway-bridge/chirpstack-gateway-bridge.toml
@@ -65,6 +69,9 @@ RUN chown -R lora-pkt-fwd /etc/lora/sx1302_hal/packet_forwarder
 COPY lora-pkt-fwd /etc/init.d/lora-pkt-fwd
 RUN chmod +x /etc/init.d/lora-pkt-fwd
 COPY global_conf.json /etc/lora/sx1302_hal/packet_forwarder/global_conf.json
+
+# Copy add gateway script
+COPY add-gateway.py /
 
 # Copy run script
 COPY run.sh /
