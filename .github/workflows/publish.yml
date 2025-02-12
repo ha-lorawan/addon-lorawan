@@ -1,8 +1,8 @@
 name: "Publish"
 
-on: [push]
-#   release:
-#     types: [published]
+on:
+  release:
+    types: [published]
 
 jobs:
   publish:
@@ -20,6 +20,7 @@ jobs:
         uses: home-assistant/builder@master
         with:
           args: |
-            --all \
+            --aarch64 \
+            --amd64 \
+            --armv7 \
             --target .
-            --docker-hub halorawan/addon-lorawan
