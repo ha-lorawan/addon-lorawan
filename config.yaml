@@ -3,6 +3,7 @@ description: "A complete LoRaWAN Network Server with Chirpstack"
 version: "0.0.1"
 slug: "lorawan"
 image: "halorawan/{arch}-addon-lorawan"
+url: "https://github.com/ha-lorawan/addon-lorawan"
 init: false
 arch:
   - aarch64
