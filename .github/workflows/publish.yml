@@ -20,5 +20,7 @@ jobs:
         uses: home-assistant/builder@master
         with:
           args: |
-            --all \
+            --aarch64 \
+            --amd64 \
+            --armv7 \
             --target .
