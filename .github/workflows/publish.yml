@@ -20,6 +20,5 @@ jobs:
         uses: home-assistant/builder@master
         with:
           args: |
-            --aarch64 \
+            --all \
             --target .
-            --docker-hub halorawan/addon-lorawan
