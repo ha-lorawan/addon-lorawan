@@ -50,7 +50,6 @@ RUN chmod +x /create-chirpstack-api-key.sh
 
 RUN mkdir /etc/lora
 COPY sx1302_hal /etc/lora/sx1302_hal
-# RUN chmod +x /etc/lora/sx1302_hal/packet_forwarder/lora_pkt_fwd
 RUN cd /etc/lora/sx1302_hal && make
 
 RUN mkdir /var/run/mosquitto
@@ -77,9 +76,5 @@ COPY add-gateway.py /
 COPY run.sh /
 RUN chmod a+x /run.sh
 
-# Expose Chirpstack Ports
-# EXPOSE 8080
-# EXPOSE 1700
-
 # Run run.sh
-CMD ["bash", "./run.sh"]
+CMD ["./run.sh"]
