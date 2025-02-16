@@ -5,6 +5,7 @@
 
 ## Requirements
 - [RAK WisGate Developer Base - RAK7271 or RAK7371](https://store.rakwireless.com/products/wisgate-developer-base?srsltid=AfmBOopXkQDyqq3tEIFsuDUnioYvLEW8XTG2Pn1TgxHLK3eiVgRcaFjX&variant=39942858703046)
+    - Current compatible versions are US915, EU868, and AU915.
 
 ## Installing
 1. Click the link below to open up the add-on store in your Home Assistant dashboard.  

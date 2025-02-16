@@ -1,6 +1,7 @@
 import grpc
 from chirpstack_api import api
 import json5
+import argparse
 
 # Configuration.
 # Read the gateway ID from the JSON configuration file.
@@ -23,6 +24,13 @@ with open(api_key_file_path, "r") as api_key_file:
       break
 
 if __name__ == "__main__":
+  # Parse command-line arguments
+  parser = argparse.ArgumentParser(description="Add a new LoRaWAN gateway")
+  parser.add_argument("--latitude", type=float, required=True, help="Latitude of the gateway")
+  parser.add_argument("--longitude", type=float, required=True, help="Longitude of the gateway")
+  parser.add_argument("--altitude", type=float, required=True, help="Altitude of the gateway")
+  args = parser.parse_args()
+
   # Connect without using TLS.
   channel = grpc.insecure_channel(server)
 
@@ -45,9 +53,9 @@ if __name__ == "__main__":
   req.gateway.tenant_id = tenant_id
   req.gateway.name = "RAK Gateway"
   req.gateway.description = "RAK7271 / RAK7371 - WisGate Developer LoRaWAN Gateway"
-  # req.gateway.location.latitude = 37.944773
-  # req.gateway.location.longitude = -122.052319
-  # req.gateway.location.altitude = 1
+  req.gateway.location.latitude = args.latitude
+  req.gateway.location.longitude = args.longitude
+  req.gateway.location.altitude = args.altitude
   req.gateway.stats_interval = 30
 
   try:

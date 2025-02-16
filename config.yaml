@@ -1,6 +1,6 @@
 name: "LoRaWAN Add-on"
 description: "A complete LoRaWAN Network Server with Chirpstack"
-version: "0.0.2"
+version: "0.0.3"
 slug: "lorawan"
 image: "halorawan/{arch}-addon-lorawan"
 url: "https://github.com/ha-lorawan/addon-lorawan"
@@ -17,5 +17,11 @@ devices:
 udev: true
 options:
   region: US915
+  latitude: 0
+  longitude: 0
+  altitude: 0
 schema:
   region: list(US915|EU868|AS923)
+  latitude: float
+  longitude: float
+  altitude: float

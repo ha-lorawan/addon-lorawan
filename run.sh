@@ -72,8 +72,13 @@ service lora-pkt-fwd start
 sleep 5
 /create-chirpstack-api-key.sh
 
+# get gateway deployment info
+LATITUDE=$(bashio::config 'latitude')
+LONGITUDE=$(bashio::config 'longitude')
+ALTITUDE=$(bashio::config 'altitude')
+
 # add gateway to chirpstack
-python3 add-gateway.py
+python3 add-gateway.py --latitude $LATITUDE --longitude $LONGITUDE --altitude $ALTITUDE
 
 # keep the container running
 while true; do
