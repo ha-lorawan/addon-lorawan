@@ -10,7 +10,7 @@
 ## Installing
 1. Click the link below to open up the add-on store in your Home Assistant dashboard.  
 [![Open your Home Assistant instance and show the add-on store.](https://my.home-assistant.io/badges/supervisor_store.svg)](https://my.home-assistant.io/redirect/supervisor_store/)  
-2. Click the menu icon ![menu](image.png) in the top right corner and select "Repositories". 
+2. Click the menu icon ![menu](https://raw.githubusercontent.com/ha-lorawan/addon-lorawan/refs/heads/master/menu.png) in the top right corner and select "Repositories". 
 3. Add the following URL: `https://github.com/ha-lorawan/addon-lorawan` and click "Add".  
 4. Click "Close" and then refresh the page.
 5. Find the `Home Assistant LoRaWAN Add-on` section in click on the `LoRaWAN Add-on`.
